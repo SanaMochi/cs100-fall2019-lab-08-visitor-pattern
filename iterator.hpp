@@ -3,11 +3,11 @@
 
 #include <stack>
 
-#include "../lab03/base.hpp"
-#include "../lab04/container.hpp"
+#include "base.hpp"
+//#include "../lab04/container.hpp"
 
 class Base;
-
+					// 0,	1,		2
 enum ChildIndicator { left, right, end };
 
 class Iterator {
@@ -40,9 +40,10 @@ class BinaryIterator : public Iterator {
 
 class UnaryIterator : public Iterator {
     protected:
-        ChildIndicator c;
+        
 
     public:
+    ChildIndicator c;
         UnaryIterator(Base* ptr);
 
         void first();

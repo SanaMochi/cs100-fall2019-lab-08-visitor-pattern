@@ -19,9 +19,11 @@ bool UnaryIterator::is_done() {
     }
     return false;
 }
+
 Base* UnaryIterator::current() { 
     if(this->c == left) {
         return this->self_ptr->get_left();
     }
     return nullptr;
 }
+
