@@ -10,6 +10,10 @@ class Add : public Base {
         Add(Base* Op1, Base* Op2 ) : Base() { Oprand1 = Op1; Oprand2 = Op2;}
         virtual double evaluate() { return (Oprand1->evaluate() + Oprand2->evaluate());}
         virtual std::string stringify() { return std::to_string(Oprand1->evaluate()) + " + " + std::to_string(Oprand2->evaluate()); }
+		virtual Iterator* create_iterator() {
+			BinaryIterator* it = new BinaryIterator(this);
+			return it;
+		}
 };
 
 #endif //__ADD_HPP__
