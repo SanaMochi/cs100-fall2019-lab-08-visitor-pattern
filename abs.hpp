@@ -1,7 +1,6 @@
 #ifndef _Abs_
 #define _Abs_
 
-//#include "base.hpp"
 #include "decorator.hpp"
 #include <cmath>
 
@@ -14,6 +13,13 @@ class Abs : public Decorator {
 	
 	virtual double evaluate() {
 		return std::abs(this->c->evaluate());
+	}
+	virtual Iterator* create_iterator() {
+			UnaryIterator* it = new UnaryIterator(this);
+			return it;
+	}
+	void accept(CountVisitor* v) {
+			v->visit_abs();
 	}
 };
 

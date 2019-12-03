@@ -16,6 +16,13 @@ class Div : public Base {
 		virtual std::string stringify() {
 			return (std::to_string(Op1->evaluate()) + " / " + std::to_string(Op2->evaluate()));
 		}
+		virtual Iterator* create_iterator() {
+			BinaryIterator* it = new BinaryIterator(this);
+			return it;
+		}
+		void accept(CountVisitor* v) {
+			v->visit_div();
+		}
 };
 
 #endif // DIV_H

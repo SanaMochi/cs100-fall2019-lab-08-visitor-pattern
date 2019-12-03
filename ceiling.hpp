@@ -13,6 +13,13 @@ class Ceiling : public Decorator {
 	virtual double evaluate() {
 		return ceil(this->c->evaluate());
 	}
+	virtual Iterator* create_iterator() {
+			UnaryIterator* it = new UnaryIterator(this);
+			return it;
+	}
+	void accept(CountVisitor* v) {
+			v->visit_ceil();
+	}
 };
 
 #endif //_Ceiling_
