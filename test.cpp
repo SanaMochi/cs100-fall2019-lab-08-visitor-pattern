@@ -30,3 +30,7 @@ TEST(IteratorTest, test1){
 	Iterator* binit  =add->create_iterator();
 	std::cout << binit->current()->evaluate() << std::endl;
 }
+
+TEST(IteratorTest, test){
+	
+}

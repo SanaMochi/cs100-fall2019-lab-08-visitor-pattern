@@ -234,6 +234,36 @@ gtest/fast:
 	$(MAKE) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+binary_iterator.o: binary_iterator.cpp.o
+
+.PHONY : binary_iterator.o
+
+# target to build an object file
+binary_iterator.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/binary_iterator.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/binary_iterator.cpp.o
+.PHONY : binary_iterator.cpp.o
+
+binary_iterator.i: binary_iterator.cpp.i
+
+.PHONY : binary_iterator.i
+
+# target to preprocess a source file
+binary_iterator.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/binary_iterator.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/binary_iterator.cpp.i
+.PHONY : binary_iterator.cpp.i
+
+binary_iterator.s: binary_iterator.cpp.s
+
+.PHONY : binary_iterator.s
+
+# target to generate assembly for a file
+binary_iterator.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/binary_iterator.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/binary_iterator.cpp.s
+.PHONY : binary_iterator.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -260,6 +290,36 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+preorder_iterator.o: preorder_iterator.cpp.o
+
+.PHONY : preorder_iterator.o
+
+# target to build an object file
+preorder_iterator.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/preorder_iterator.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/preorder_iterator.cpp.o
+.PHONY : preorder_iterator.cpp.o
+
+preorder_iterator.i: preorder_iterator.cpp.i
+
+.PHONY : preorder_iterator.i
+
+# target to preprocess a source file
+preorder_iterator.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/preorder_iterator.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/preorder_iterator.cpp.i
+.PHONY : preorder_iterator.cpp.i
+
+preorder_iterator.s: preorder_iterator.cpp.s
+
+.PHONY : preorder_iterator.s
+
+# target to generate assembly for a file
+preorder_iterator.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/preorder_iterator.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/preorder_iterator.cpp.s
+.PHONY : preorder_iterator.cpp.s
 
 test.o: test.cpp.o
 
@@ -288,6 +348,63 @@ test.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+unary_iterator.o: unary_iterator.cpp.o
+
+.PHONY : unary_iterator.o
+
+# target to build an object file
+unary_iterator.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/unary_iterator.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unary_iterator.cpp.o
+.PHONY : unary_iterator.cpp.o
+
+unary_iterator.i: unary_iterator.cpp.i
+
+.PHONY : unary_iterator.i
+
+# target to preprocess a source file
+unary_iterator.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/unary_iterator.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unary_iterator.cpp.i
+.PHONY : unary_iterator.cpp.i
+
+unary_iterator.s: unary_iterator.cpp.s
+
+.PHONY : unary_iterator.s
+
+# target to generate assembly for a file
+unary_iterator.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/unary_iterator.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unary_iterator.cpp.s
+.PHONY : unary_iterator.cpp.s
+
+visitor.o: visitor.cpp.o
+
+.PHONY : visitor.o
+
+# target to build an object file
+visitor.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/visitor.cpp.o
+.PHONY : visitor.cpp.o
+
+visitor.i: visitor.cpp.i
+
+.PHONY : visitor.i
+
+# target to preprocess a source file
+visitor.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/visitor.cpp.i
+.PHONY : visitor.cpp.i
+
+visitor.s: visitor.cpp.s
+
+.PHONY : visitor.s
+
+# target to generate assembly for a file
+visitor.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/visitor.cpp.s
+.PHONY : visitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,12 +423,24 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... binary_iterator.o"
+	@echo "... binary_iterator.i"
+	@echo "... binary_iterator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... preorder_iterator.o"
+	@echo "... preorder_iterator.i"
+	@echo "... preorder_iterator.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... unary_iterator.o"
+	@echo "... unary_iterator.i"
+	@echo "... unary_iterator.s"
+	@echo "... visitor.o"
+	@echo "... visitor.i"
+	@echo "... visitor.s"
 .PHONY : help
 
 

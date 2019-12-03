@@ -3,6 +3,7 @@
 
 #include <string>
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Op : public Base {
 	double Value;
@@ -12,6 +13,7 @@ class Op : public Base {
         virtual double evaluate() { return Value; }
         virtual std::string stringify() { return std::to_string(Value); }
         Iterator* create_iterator(){ i = new UnaryIterator(this); return i; }
+        void accept(CountVisitor * v){	v->visit_op();	}
 };
 
 #endif //__OP_HPP__
