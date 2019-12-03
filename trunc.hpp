@@ -39,6 +39,9 @@ class Trunc: public Decorator{
 			UnaryIterator* it = new UnaryIterator(this);
 			return it;
 	}
+	void accept(CountVisitor* v) {
+			v->visit_trunc();
+	}
 };
 
 #endif	//_TRUNC_

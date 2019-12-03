@@ -10,9 +10,12 @@ class Op : public Base {
         Op(double value) : Base() { Value = value; }
         virtual double evaluate() { return Value; }
         virtual std::string stringify() { return std::to_string(Value); }
-         Iterator* create_iterator() {
+        virtual Iterator* create_iterator() {
 			it = new UnaryIterator(this);
 			return it;
+		}
+		void accept(CountVisitor* v) {
+			v->visit_op();
 		}
 };
 

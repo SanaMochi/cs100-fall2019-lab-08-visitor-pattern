@@ -96,3 +96,12 @@ TEST(IteratorTest, ParenTest){
 	Iterator* it = p->create_iterator();
 	EXPECT_EQ(it->current()->stringify() , "(4.000000 - 2.000000)");
 }
+/*
+TEST(VisitorTest, Test1){
+	Op* op1 = new Op(4);
+	Op* op2 = new Op(2);
+	Sub* sub = new Sub(op1, op2);
+	Paren* p = new Paren(dec);
+	Iterator* it = p->create_iterator();
+}
+*/

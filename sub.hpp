@@ -14,6 +14,9 @@ class Sub : public Base {
 			BinaryIterator* it = new BinaryIterator(this);
 			return it;
 		}
+		void accept(CountVisitor* v) {
+			v->visit_sub();
+		}
 };
 
 #endif //__RAND_HPP__

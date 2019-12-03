@@ -18,6 +18,9 @@ class Floor : public Decorator {
 			UnaryIterator* it = new UnaryIterator(this);
 			return it;
 	}
+	void accept(CountVisitor* v) {
+			v->visit_floor();
+	}
 };
 
 #endif //_Floor_

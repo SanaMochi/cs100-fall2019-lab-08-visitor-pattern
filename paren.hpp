@@ -15,6 +15,9 @@ class Paren: public Decorator{
 			UnaryIterator* it = new UnaryIterator(this);
 			return it;
 	}
+	void accept(CountVisitor* v) {
+			v->visit_paren();
+	}
 };
 
 #endif	//_PAREN_

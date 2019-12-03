@@ -18,6 +18,9 @@ class Abs : public Decorator {
 			UnaryIterator* it = new UnaryIterator(this);
 			return it;
 	}
+	void accept(CountVisitor* v) {
+			v->visit_abs();
+	}
 };
 
 #endif //_Abs_

@@ -21,6 +21,9 @@ class Mult : public Base {
 			BinaryIterator* it = new BinaryIterator(this);
 			return it;
 		}
+		void accept(CountVisitor* v) {
+			v->visit_mult();
+		}
 };
 
 #endif // MULT_H

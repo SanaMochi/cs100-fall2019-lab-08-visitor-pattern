@@ -14,6 +14,9 @@ class Add : public Base {
 			BinaryIterator* it = new BinaryIterator(this);
 			return it;
 		}
+		void accept(CountVisitor* v) {
+			v->visit_add();
+		}
 };
 
 #endif //__ADD_HPP__
