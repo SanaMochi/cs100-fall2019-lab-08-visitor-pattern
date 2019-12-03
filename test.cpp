@@ -98,24 +98,15 @@ TEST(IteratorTest, ParenTest){
 }
 
 TEST(VisitorTest, Test1){
-	//The only way I can think of is to make the stack public and push directly to it but I don't think we are allowed to do that
-	Op* op1 = new Op(4);
-	PreorderIterator* pre = new PreorderIterator(op1);
-	std::cout << pre->current();
-//	Iterator* it = new PreorderIterator(op1);
-//	PreorderIterator* pre = new PreorderIterator(op1);
-//	pre->next();
-	Op* op2 = new Op(2);
-	PreorderIterator* pre2 = new PreorderIterator(op2);
-//	it = op2->create_iterator();
-//	it = new PreorderIterator(op2);
-	/*
-	Sub* sub = new Sub(op1, op2);
-	pre->next();
-	pre = new PreorderIterator(sub);
-	Decorator* dec = new Decorator(sub);
-	Paren* p = new Paren(dec);
-	pre->next();
-	pre = new PreorderIterator(p);*/
+	Op* one = new Op(1);
+	Op* five = new Op(5);
+	Add* sum = new Add(one, five);
+	CountVisitor* v = new CountVisitor();
+	PreorderIterator* i = new PreorderIterator(sum);
+	while(!i->is_done()){
+		sum->accept(v);
+		i->next();
+	}
+	EXPECT_EQ(v->op_count() , 3);
 }
 

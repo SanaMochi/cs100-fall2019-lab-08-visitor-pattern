@@ -18,7 +18,7 @@ class CountVisitor{
         int paren;
 
     public:
-        CountVisitor();
+        CountVisitor(){}
 
         void visit_op() {this->ops++;}
         int op_count() {return ops;}
