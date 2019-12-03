@@ -5,7 +5,7 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
-test.cpp unary_iterator.cpp binary_iterator.cpp
+test.cpp unary_iterator.cpp binary_iterator.cpp preorder_iterator.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

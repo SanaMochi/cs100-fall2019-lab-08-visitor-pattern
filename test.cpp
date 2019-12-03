@@ -96,12 +96,26 @@ TEST(IteratorTest, ParenTest){
 	Iterator* it = p->create_iterator();
 	EXPECT_EQ(it->current()->stringify() , "(4.000000 - 2.000000)");
 }
-/*
+
 TEST(VisitorTest, Test1){
+	//The only way I can think of is to make the stack public and push directly to it but I don't think we are allowed to do that
 	Op* op1 = new Op(4);
+	PreorderIterator* pre = new PreorderIterator(op1);
+	std::cout << pre->current();
+//	Iterator* it = new PreorderIterator(op1);
+//	PreorderIterator* pre = new PreorderIterator(op1);
+//	pre->next();
 	Op* op2 = new Op(2);
+	PreorderIterator* pre2 = new PreorderIterator(op2);
+//	it = op2->create_iterator();
+//	it = new PreorderIterator(op2);
+	/*
 	Sub* sub = new Sub(op1, op2);
+	pre->next();
+	pre = new PreorderIterator(sub);
+	Decorator* dec = new Decorator(sub);
 	Paren* p = new Paren(dec);
-	Iterator* it = p->create_iterator();
+	pre->next();
+	pre = new PreorderIterator(p);*/
 }
-*/
+
