@@ -18,14 +18,17 @@ int main(){
 	Add* sum = new Add(one, five);
 	CountVisitor* v = new CountVisitor();
 	PreorderIterator* i = new PreorderIterator(sum);
-	std::cout << i->current() << std::endl;
-	i->next();/*
-	i = new PreorderIterator(one);
-	std::cout << i->current() << std::endl;
+	i->first();
 	i->next();
-	i = new PreorderIterator(five);
-	std::cout << i->current() << std::endl;
-	*/
+	i = (PreorderIterator*)sum->create_iterator();
+	std::cout << i->current()->evaluate() << std::endl;
+	i = (PreorderIterator*)one->create_iterator();
+	std::cout << i->current()->evaluate() << std::endl;
+	//i->first();
+	i->next();
+	i = (PreorderIterator*)five->create_iterator();
+	std::cout << i->current()->evaluate() << std::endl;
+	
 	/*
 	sum->accept(v);
 	while(!i->is_done()){

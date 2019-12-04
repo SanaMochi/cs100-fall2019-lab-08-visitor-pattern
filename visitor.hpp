@@ -3,19 +3,19 @@
 
 class CountVisitor{
     private:
-        int ops;
-        int rands;
-        int mults;
-        int divs;
+        int ops = 0;
+        int rands = 0;
+        int mults = 0;
+        int divs = 0;
         int add = 0;
-        int sub;
-        int pow;
+        int sub = 0;
+        int pow = 0;
         
-        int ceil;
-        int floor;
-        int abs;
-        int trunc;
-        int paren;
+        int ceil = 0;
+        int floor = 0;
+        int abs = 0;
+        int trunc = 0;
+        int paren = 0;
 
     public:
         CountVisitor(){}
