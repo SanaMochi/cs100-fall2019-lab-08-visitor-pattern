@@ -76,7 +76,7 @@ TEST(IteratorTest, AbsTest){
 	Iterator* it = abs->create_iterator();
 	EXPECT_EQ(it->current()->evaluate() , 9);
 }
-
+/*
 TEST(IteratorTest, TruncTest){
 	Op* op1 = new Op(4);
 	Op* op2 = new Op(2);
@@ -96,17 +96,43 @@ TEST(IteratorTest, ParenTest){
 	Iterator* it = p->create_iterator();
 	EXPECT_EQ(it->current()->stringify() , "(4.000000 - 2.000000)");
 }
-
-TEST(VisitorTest, Test1){
+*/
+TEST(VisitorTest, OpCountTest){
 	Op* one = new Op(1);
 	Op* five = new Op(5);
 	Add* sum = new Add(one, five);
 	CountVisitor* v = new CountVisitor();
-	PreorderIterator* i = new PreorderIterator(sum);
-	while(!i->is_done()){
-		sum->accept(v);
-		i->next();
-	}
-	EXPECT_EQ(v->op_count() , 3);
+	PreorderIterator* i = new PreorderIterator(sum);		//skips the first one
+	i->first();
+	i->next();
+	i = (PreorderIterator*)sum->create_iterator();
+	i->current()->accept(v);								//v.add++
+	i->next();	
+	i = (PreorderIterator*)one->create_iterator();
+	i->current()->accept(v);									//v.op++
+	i->next();
+	i = (PreorderIterator*)five->create_iterator();
+	i->current()->accept(v);									//v.op++
+	
+	EXPECT_EQ(v->op_count() , 2);
 }
 
+TEST(VisitorTest, AddCountTest){			//same code as above but this time it checks the count of add
+	Op* one = new Op(1);
+	Op* five = new Op(5);
+	Add* sum = new Add(one, five);
+	CountVisitor* v = new CountVisitor();
+	PreorderIterator* i = new PreorderIterator(sum);		//skips the first one
+	i->first();
+	i->next();
+	i = (PreorderIterator*)sum->create_iterator();
+	i->current()->accept(v);								//v.add++
+	i->next();	
+	i = (PreorderIterator*)one->create_iterator();
+	i->current()->accept(v);									//v.op++
+	i->next();
+	i = (PreorderIterator*)five->create_iterator();
+	i->current()->accept(v);									//v.op++
+	
+	EXPECT_EQ(v->add_count() , 1);
+}

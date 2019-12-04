@@ -21,6 +21,7 @@ class Base {
 		virtual Iterator* create_iterator() = 0;
 		Base* get_left(){return this;}
 		Base* get_right(){return this;}
+		virtual void accept(CountVisitor* v) = 0;
 
 };
 
