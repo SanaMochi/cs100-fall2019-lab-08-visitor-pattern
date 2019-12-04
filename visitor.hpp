@@ -7,7 +7,7 @@ class CountVisitor{
         int rands;
         int mults;
         int divs;
-        int add;
+        int add = 0;
         int sub;
         int pow;
         

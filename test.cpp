@@ -103,10 +103,11 @@ TEST(VisitorTest, Test1){
 	Add* sum = new Add(one, five);
 	CountVisitor* v = new CountVisitor();
 	PreorderIterator* i = new PreorderIterator(sum);
+	sum->accept(v);
 	while(!i->is_done()){
 		sum->accept(v);
 		i->next();
 	}
-	EXPECT_EQ(v->op_count() , 3);
+	EXPECT_EQ(v->add_count() , 3);
 }
 
